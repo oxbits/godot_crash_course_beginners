@@ -17,5 +17,6 @@ offset_left = 427.0
 offset_top = 369.0
 offset_right = 745.0
 offset_bottom = 506.0
-tooltip_text = "This is the quite button"
 text = "Quit"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
