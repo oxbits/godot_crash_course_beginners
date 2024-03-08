@@ -91,4 +91,4 @@ shape = SubResource("CapsuleShape2D_vsagy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7rag5")
-animation = &"Death"
+animation = &"Idle"
