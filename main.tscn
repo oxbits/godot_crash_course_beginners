@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://mjr01fmo4hji"]
+[gd_scene load_steps=2 format=3 uid="uid://mjr01fmo4hji"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rp82t"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_rp82t")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 427.0
+offset_top = 133.0
+offset_right = 745.0
+offset_bottom = 270.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 427.0
+offset_top = 369.0
+offset_right = 745.0
+offset_bottom = 506.0
+tooltip_text = "This is the quite button"
+text = "Quit"
