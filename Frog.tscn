@@ -81,9 +81,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0lbey")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
