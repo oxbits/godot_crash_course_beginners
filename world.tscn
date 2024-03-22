@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chvdt6mitc7hd"]
+[gd_scene load_steps=6 format=3 uid="uid://chvdt6mitc7hd"]
 
 [ext_resource type="PackedScene" uid="uid://dfprsc2q5pwev" path="res://Player/Player.tscn" id="1_2twuw"]
+[ext_resource type="Script" path="res://BG.gd" id="1_mlmin"]
+[ext_resource type="Texture2D" uid="uid://3orce52h68ls" path="res://Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_umek2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfnog"]
 size = Vector2(1197.62, 131.375)
@@ -9,6 +11,18 @@ size = Vector2(1197.62, 131.375)
 size = Vector2(164.375, 723)
 
 [node name="World" type="Node2D"]
+
+[node name="BG" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+script = ExtResource("1_mlmin")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(1152, 2.08165e-12)
+
+[node name="Back" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(3, 2.7)
+texture = ExtResource("2_umek2")
 
 [node name="Player" parent="." instance=ExtResource("1_2twuw")]
 position = Vector2(445, 332)
