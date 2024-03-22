@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c7w8sahbjxovy"]
+[gd_scene load_steps=22 format=3 uid="uid://c7w8sahbjxovy"]
 
 [ext_resource type="Texture2D" uid="uid://dxajl1uuchwj7" path="res://Sunny-land-files/Graphical Assets/spritesheets/frog-idle.png" id="1_03wgs"]
 [ext_resource type="Script" path="res://Frog.gd" id="1_qg5yf"]
@@ -138,6 +138,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_w1lsm"]
 radius = 160.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpb4o"]
+size = Vector2(12, 13)
+
 [node name="Frog" type="CharacterBody2D"]
 script = ExtResource("1_qg5yf")
 
@@ -155,5 +158,12 @@ animation = &"Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_w1lsm")
 
+[node name="PlayerDeath" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_hpb4o")
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
